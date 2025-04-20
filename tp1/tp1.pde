@@ -10,7 +10,6 @@ void setup() {
 void draw() {
   println(mouseX, mouseY); // Coordenadas del mouse
   
-  pushMatrix();
   translate(100, 6); // Mueve 100 píxeles a la derecha y 6 píxeles hacia abajo todo el dibujo
   
   // Pelo
@@ -149,5 +148,4 @@ void draw() {
   fill(247, 231, 222);
   rect(490, 160, 22, 25); 
   
-  popMatrix(); // Cierre de translate
 }
