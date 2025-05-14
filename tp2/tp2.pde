@@ -10,7 +10,7 @@ void setup(){
   numPantalla = 0;
   contadorTiempo = 0;
   frameRate(30);
-  miFuente = createFont("Gothic.ttf",48);
+  miFuente = createFont("LGGothic.ttf",48);
   textFont(miFuente);
   
   // Cargar las imágenes
@@ -25,11 +25,12 @@ void setup(){
    
   // Pantalla 0
   image(imagen1, 0, 0, width, height);
-  fill(209, 38, 38);
+  float opacidad = map(contadorTiempo, 0, 100, 0, 255);
+  fill(209, 38, 38, opacidad);
   textAlign(CENTER,CENTER);
   textSize(24);
   float y = map(contadorTiempo, 0, 100, 0, 140);
-  text("Tango Virus es una instalación interactiva que\nexplora sistemas adaptativos aplicados al tango, \nsimulando procesos virales y respuestas inmunológicas\n mediante vida artificial.El público interviene en \ntiempo real, transformando la música con sus \nmovimientos al bailar.",width/2,y);
+  text("Tango Virus es una instalación interactiva que\nexplora sistemas adaptativos aplicados al tango, \nsimulando procesos virales y respuestas inmunológicas\n mediante vida artificial. El público interviene en \ntiempo real, transformando la música con sus \nmovimientos al bailar.",width/2,y);
   }
   
   else if (numPantalla == 1) {
@@ -37,7 +38,7 @@ void setup(){
   image(imagen2, 0, 0, width, height);
   float opacidad = map(contadorTiempo, 0, 150, 0, 500);
   float y = map(contadorTiempo, 0, 60, height/2, height/2-140);
-  fill(0, opacidad);
+  fill(209, 38, 38, opacidad);
   textAlign(CENTER, CENTER);
   textSize(24);
   text("El sistema musical intenta defenderse con un mecanismo \ninmunológico simulado. Si resiste, desarrolla 'anticuerpos'\n y se vuelve resiliente. Si es atacado repetidamente, \ncolapsa y 'muere'.",width/2,y);
@@ -46,10 +47,11 @@ void setup(){
   else if (numPantalla == 2) {
   // Pantalla 2
   image(imagen3, 0, 0, width, height);
-  fill(0);
+  float opacidad = map(contadorTiempo, 0, 150, 0, 255);
+  fill(209, 38, 38, opacidad);
   textAlign(CENTER, CENTER);
   textSize(24);
-  text("Autor: Emiliano Causa. Año 2005",width/2,height/2);
+  text("Autor: Emiliano Causa, 2005",width/2,height/2);
   }
   
   else if (numPantalla == 3) {
@@ -64,7 +66,7 @@ void setup(){
   ellipse(width/2, height/2, 100, 100);
     
   fill(0);
-  textSize(20);
+  textSize(17);
   text("REINICIAR", width/2, height/2);
 }
 
@@ -83,7 +85,6 @@ void setup(){
 
 void mousePressed() {
   if (numPantalla == 3) {
-  // Si estamos en la pantalla 3, verificar si se hizo clic
   float distancia = dist(width/2, height/2, mouseX, mouseY);
   if (distancia < 50) {
   numPantalla = 0; // Reiniciar
