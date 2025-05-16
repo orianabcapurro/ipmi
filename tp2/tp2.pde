@@ -51,7 +51,9 @@ void setup(){
   fill(209, 38, 38, opacidad);
   textAlign(CENTER, CENTER);
   textSize(24);
-  text("Autor: Emiliano Causa, 2005",width/2,height/2);
+  float offsetX = sin(contadorTiempo * 0.05) * 30;
+  float offsetY = cos(contadorTiempo * 0.03) * 15;
+  text("Autor: Emiliano Causa, 2005", width/2 + offsetX, height/2 + offsetY);
   }
   
   else if (numPantalla == 3) {
