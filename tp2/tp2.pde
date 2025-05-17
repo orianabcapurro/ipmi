@@ -12,25 +12,23 @@ void setup() {
   frameRate(30);
   miFuente = createFont("LGGothic.ttf", 48);
   textFont(miFuente);
-
   // Cargar las imágenes
   imagen1 = loadImage("imagen1.jpg");
   imagen2 = loadImage("imagen2.jpg");
   imagen3 = loadImage("imagen3.jpg");
 }
+
 void draw() {
   background(255);
-
+  
   if (numPantalla == -1) {
-     // Pantalla de inicio
+    // Pantalla (0.5) de inicio
     background(82, 47, 93);
-
     // Título
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(36);
     text("TANGO VIRUS", width/2, height/3);
-
     // Botón de inicio
     float distancia = dist(width/2, height/2 + 50, mouseX, mouseY);
     if (distancia < 50) {
@@ -39,14 +37,11 @@ void draw() {
       fill(200); // Gris cuando el mouse no está sobre el botón
     }
     ellipse(width/2, height/2 + 50, 100, 100);
-
     fill(0);
     textSize(17);
     text("COMENZAR", width/2, height/2 + 50);
   }
-
   else if (numPantalla == 0) {
-
     // Pantalla 0
     image(imagen1, 0, 0, width, height);
     float opacidad = map(contadorTiempo, 0, 100, 0, 255);
@@ -56,7 +51,6 @@ void draw() {
     float y = map(contadorTiempo, 0, 100, 0, 140);
     text("Tango Virus es una instalación interactiva que\nexplora sistemas adaptativos aplicados al tango, \nsimulando procesos virales y respuestas inmunológicas\n mediante vida artificial. El público interviene en \ntiempo real, transformando la música con sus \nmovimientos al bailar.", width/2, y);
   }
-
   else if (numPantalla == 1) {
     // Pantalla 1
     image(imagen2, 0, 0, width, height);
@@ -67,7 +61,6 @@ void draw() {
     textSize(24);
     text("El sistema musical intenta defenderse con un mecanismo \ninmunológico simulado. Si resiste, desarrolla 'anticuerpos'\n y se vuelve resiliente. Si es atacado repetidamente, \ncolapsa y 'muere'.", width/2, y);
   }
-
   else if (numPantalla == 2) {
     // Pantalla 2
     image(imagen3, 0, 0, width, height);
@@ -79,7 +72,6 @@ void draw() {
     float offsetY = cos(contadorTiempo * 0.03) * 15;
     text("Autor: Emiliano Causa, 2005", width/2 + offsetX, height/2 + offsetY);
   }
-
   else if (numPantalla == 3) {
     // Pantalla 3 (botón de reinicio)
     background(82, 47, 93);
@@ -90,12 +82,11 @@ void draw() {
       fill(200); // Gris cuando el mouse no está sobre el botón
     }
     ellipse(width/2, height/2, 100, 100);
-
     fill(0);
     textSize(17);
     text("REINICIAR", width/2, height/2);
   }
-
+  
   // Contador para aumentar el numPantalla
   contadorTiempo++;
   if (contadorTiempo > 150) {
@@ -106,9 +97,10 @@ void draw() {
     }
   }
 }
+
 void mousePressed() {
-   if (numPantalla == -1) {
-     // En la pantalla de inicio
+  if (numPantalla == -1) {
+    // En la pantalla de inicio
     float distancia = dist(width/2, height/2 + 50, mouseX, mouseY);
     if (distancia < 50) {
       numPantalla++;
