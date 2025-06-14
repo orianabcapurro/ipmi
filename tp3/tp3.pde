@@ -1,5 +1,8 @@
 // Oriana Betsabé Capurro, tp3, comisión 3
 
+// https://www.youtube.com/watch?v=rrT7blfB_og
+// Mil disculpas de que el tiempo esté en el límite que nos dijiste, es que quería poder explicar TODO
+
 // Variables
 PImage img;
 int numCuadrados = 40; // Cuadrados
