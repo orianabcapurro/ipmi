@@ -8,7 +8,7 @@ void dibujarPatron(float x, float y, int cantidad) {
 for (int i = 0; i < cantidad; i++) {
   for (int j = 0; j < 2; j++) {
     
-    // Solo dibujar en la primera iteración del ciclo interno para mantener la imagen igual
+    // Solo dibujar en la primera iteración del ciclo interno
     if (j == 0) {
       // Calcular tamaño usando función que retorna valor
       float tamano = calcularTamano(i, cantidad);
