@@ -1,12 +1,15 @@
-// Función 1: (No retorna valor) Dibuja el patrón completo
+// Función 1: (No retorna valor) Dibuja el patrón usando grilla
 void dibujarPatron(float x, float y, int cantidad) {
   push();
   translate(x, y);
   rotate(PI/4); // Rotar 45 grados
   
-  // Ciclos for anidados para el patrón
-  for (int i = 0; i < cantidad; i++) {
-    for (int j = 0; j < 2; j++) {
+  // Grilla: 2 columnas (j) por cantidad de filas (i)
+  int filas = cantidad;
+  int columnas = 2;
+  
+  for (int i = 0; i < filas; i++) {
+    for (int j = 0; j < columnas; j++) {
       
       float factor = (j == 0) ? 1.0 : 0.7;
       float tamano = calcularTamano(i, cantidad) * factor;
@@ -26,17 +29,10 @@ void dibujarPatron(float x, float y, int cantidad) {
         }
       }
       
-      if (j == 0) {
-        // Primera iteración: cuadrado más grande
-        noStroke();
-        rectMode(CENTER);
-        rect(0, 0, tamano, tamano);
-      } else {
-        // Segunda iteración: cuadrado más chico encima
-        noStroke();
-        rectMode(CENTER);
-        rect(0, 0, tamano, tamano);
-      }
+      // Dibujar cuadrado en la posición de la grilla
+      noStroke();
+      rectMode(CENTER);
+      rect(0, 0, tamano, tamano);
     }
   }
   pop();
