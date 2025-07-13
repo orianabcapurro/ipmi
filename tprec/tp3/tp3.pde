@@ -1,5 +1,5 @@
 // Oriana Betsabé Capurro, tp3, comisión 3
-
+// https://www.youtube.com/watch?v=rrT7blfB_og El video me habías dicho que no tenía que rehacerlo, pero por las dudas dejo igual el link del que había hecho
 // Variables
 PImage img;
 int numCuadrados = 40; // Cuadrados
